@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.', static_folder='.', static url_path=' )
 
 FEATURES = [
     "python", "coding", "math", "communication", "creativity",

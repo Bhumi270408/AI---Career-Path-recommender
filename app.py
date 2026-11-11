@@ -170,6 +170,7 @@ def recommend():
 def health():
     return jsonify({"status": "ok", "model": "RandomForestClassifier", "test_accuracy_demo": round(MODEL_ACCURACY * 100, 1)})
 
+import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

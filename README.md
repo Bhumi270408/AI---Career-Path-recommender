@@ -1,78 +1,57 @@
-# AI Career Path Recommender
+# PathPilot — AI Career Path Recommender
 
-## Overview
-AI Career Path Recommender is a machine learning-based web application designed to help students explore suitable career options based on their interests, skills, and technical knowledge.
+A beginner-friendly full-stack demo that recommends career directions from a user's self-rated skills and interests.
 
-The system analyzes user inputs and recommends relevant career paths along with skills they should develop to pursue those careers.
+## Run locally (Windows)
 
-## Features
-- **Career Recommendations:** Suggests suitable career paths based on user inputs.
-- **Skill Analysis:** Evaluates users' technical skills and interests.
-- **Personalized Suggestions:** Provides career recommendations according to individual profiles.
-- **Learning Roadmap:** Helps users identify skills they need to improve.
-- **Simple User Interface:** Easy-to-use and interactive web application.
+1. Install Python 3.10 or newer.
+2. Extract this ZIP and open the extracted `ai_career_path_recommender` folder in VS Code.
+3. Open Terminal in that folder.
+4. Create and activate a virtual environment (optional but recommended):
 
-## Technologies Used
-
-### Programming Language
-- Python
-
-### Libraries
-- **NumPy:** Used for numerical operations and handling data.
-- **Pandas:** Used for data manipulation and analysis.
-- **Scikit-learn:** Used for machine learning and career prediction.
-
-### Web Development
-- HTML
-- CSS
-- JavaScript
-
-### Framework
-- Flask
-
-## How It Works
-1. The user enters their interests, skills, and technical knowledge.
-2. The application processes the information.
-3. The machine learning model analyzes the input data.
-4. The system recommends suitable career paths.
-5. The user receives relevant career suggestions and learning guidance.
-
-## Installation and Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
+   ```powershell
+   py -m venv .venv
+   .venv\Scripts\activate
    ```
 
-2. Navigate to the project directory:
+5. Install dependencies:
 
-   ```bash
-   cd AI-Career-Path-Recommender
+   ```powershell
+   py -m pip install -r requirements.txt
    ```
 
-3. Install the required dependencies:
+6. Start the website:
 
-   ```bash
-   pip install -r requirements.txt
+   ```powershell
+   py app.py
    ```
 
-4. Run the application:
+7. Open the local address printed in the terminal, usually `http://127.0.0.1:5000`.
 
-   ```bash
-   python app.py
-   ```
+## Where the three libraries are used
 
-5. Open the local URL displayed in your terminal.
+- **NumPy:** generates a sample training dataset with varied skill and interest ratings.
+- **Pandas:** stores the training features in a DataFrame and exports `career_training_data.csv`.
+- **Scikit-learn:** trains a `RandomForestClassifier`, evaluates it on a held-out test split, and predicts the top three career matches.
 
-## Project Objective
-The main objective of this project is to make career exploration easier for students by using machine learning techniques to provide data-driven career recommendations.
+## Project structure
 
-## Future Scope
-- Integration of more career domains.
-- Improved recommendation accuracy with larger datasets.
-- Personalized course and certification suggestions.
-- Integration of real-world job market information.
+```text
+ai_career_path_recommender/
+├── app.py
+├── requirements.txt
+├── career_training_data.csv
+├── templates/
+│   └── index.html
+└── static/
+    ├── style.css
+    └── script.js
+```
 
+## Important note
 
+This is an educational prototype. The training labels are generated from illustrative career profiles, not collected from real hiring or career-outcome data. The match percentages are model scores, not scientifically validated probabilities or guarantees. Use the recommendations as ideas to explore, not as a final career decision.
 
+## Quick API check
+
+With the server running, open `http://127.0.0.1:5000/health` to see the model status and demo test score.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathPilot — Discover your next move</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#"><span class="brand-mark">P</span> pathpilot<span class="dot">.</span></a>
+    <div class="nav-right"><span class="status-dot"></span> AI career discovery <span class="nav-tag">BETA</span></div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="spark">✦</span> YOUR NEXT CHAPTER STARTS HERE</div>
+      <h1>Find a career that<br><span>fits your kind of curious.</span></h1>
+      <p class="hero-copy">A little about you goes a long way. Share your strengths and interests — we'll suggest career paths worth exploring.</p>
+      <div class="hero-meta"><span>✦</span> No right or wrong answers <i></i> Takes about 2 minutes</div>
+    </section>
+
+    <section class="workspace">
+      <div class="form-panel">
+        <div class="section-heading">
+          <div><div class="step-label">YOUR PROFILE <span>01 / 02</span></div><h2>Let's get to know you.</h2></div>
+          <div class="profile-icon">✳</div>
+        </div>
+        <p class="section-sub">Rate how comfortable you feel with each area. You don't need to be an expert.</p>
+
+        <div class="group-title"><span class="group-icon">⌘</span> Skills & strengths</div>
+        <div class="sliders">
+          <div class="slider-row"><div class="slider-label"><label for="python">Python / programming</label><output id="python-value">2.5</output></div><input id="python" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>New to it</span><span>Confident</span></div></div>
+          <div class="slider-row"><div class="slider-label"><label for="coding">Building things with code</label><output id="coding-value">2.5</output></div><input id="coding" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>New to it</span><span>Confident</span></div></div>
+          <div class="slider-row"><div class="slider-label"><label for="math">Math & logical thinking</label><output id="math-value">2.5</output></div><input id="math" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>Not my thing yet</span><span>Love it</span></div></div>
+          <div class="slider-row"><div class="slider-label"><label for="communication">Communication</label><output id="communication-value">2.5</output></div><input id="communication" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>Still learning</span><span>Confident</span></div></div>
+          <div class="slider-row"><div class="slider-label"><label for="creativity">Creativity & visual thinking</label><output id="creativity-value">2.5</output></div><input id="creativity" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>Still learning</span><span>Very creative</span></div></div>
+          <div class="slider-row"><div class="slider-label"><label for="problem_solving">Problem-solving</label><output id="problem_solving-value">2.5</output></div><input id="problem_solving" type="range" min="0" max="5" step="0.5" value="2.5"><div class="range-ends"><span>Still learning</span><span>Confident</span></div></div>
+        </div>
+
+        <div class="group-title interests-title"><span class="group-icon">◎</span> What sparks your interest?</div>
+        <p class="mini-copy">Rate how much you'd enjoy exploring each area.</p>
+        <div class="interest-grid">
+          <div class="interest-card"><div class="interest-top"><span class="interest-emoji">⌁</span><label for="tech_interest">Technology</label></div><input id="tech_interest" type="range" min="0" max="5" step="0.5" value="3"><output id="tech_interest-value">3</output></div>
+          <div class="interest-card"><div class="interest-top"><span class="interest-emoji">↗</span><label for="business_interest">Business & strategy</label></div><input id="business_interest" type="range" min="0" max="5" step="0.5" value="3"><output id="business_interest-value">3</output></div>
+          <div class="interest-card"><div class="interest-top"><span class="interest-emoji">✎</span><label for="design_interest">Design & creativity</label></div><input id="design_interest" type="range" min="0" max="5" step="0.5" value="3"><output id="design_interest-value">3</output></div>
+          <div class="interest-card"><div class="interest-top"><span class="interest-emoji">♡</span><label for="helping_interest">Helping & teaching</label></div><input id="helping_interest" type="range" min="0" max="5" step="0.5" value="3"><output id="helping_interest-value">3</output></div>
+        </div>
+        <button class="submit-btn" id="recommend-btn"><span>Find my career paths</span><b>→</b></button>
+        <p class="privacy-note">Your answers are used only to generate these recommendations in this demo.</p>
+      </div>
+
+      <aside class="side-panel">
+        <div class="side-card insight-card">
+          <div class="side-icon">✦</div><div class="side-kicker">A NOTE BEFORE YOU BEGIN</div>
+          <h3>You don't need to have it all figured out.</h3>
+          <p>Especially if you're a student, your interests can change as you learn. Think of these results as a starting point for exploration — not a box to fit into.</p>
+        </div>
+        <div class="side-card how-card">
+          <div class="side-kicker">HOW IT WORKS</div>
+          <div class="how-step"><span>1</span><div><b>Share your profile</b><small>Rate your skills and interests.</small></div></div>
+          <div class="how-step"><span>2</span><div><b>Explore your matches</b><small>Get three career paths to consider.</small></div></div>
+          <div class="how-step"><span>3</span><div><b>Take your next step</b><small>See skills to build and a starter roadmap.</small></div></div>
+        </div>
+        <div class="model-card"><span class="model-pulse"></span><div><b>Machine learning powered</b><small>NumPy · Pandas · Scikit-learn</small></div></div>
+      </aside>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="results-heading"><div><div class="step-label">YOUR RESULTS <span>02 / 02</span></div><h2>Paths to explore.</h2><p>Here are the career directions your profile aligns with.</p></div><button id="reset-btn" class="reset-btn">↺ Start over</button></div>
+      <div id="recommendations" class="recommendations"></div>
+      <p id="disclaimer" class="disclaimer"></p>
+    </section>
+  </main>
+  <footer><span class="brand footer-brand"><span class="brand-mark">P</span> pathpilot<span class="dot">.</span></span><span>Built for curious minds. Keep exploring.</span></footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
